@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark;
+    @apply text-white bg-gray-900;
+    --navbar-height: 4rem;
+  }
+
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-gray-900;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #1a1a1a;
+    color: white;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  a {
+    @apply font-medium text-blue-400 no-underline hover:text-blue-300;
+  }
+
+  button {
+    @apply rounded-lg border border-transparent px-4 py-2 text-base font-medium 
+           bg-gray-800 cursor-pointer transition-colors duration-300
+           hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium;
+  }
+
+  .mobile-nav-link {
+    @apply block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 
+           transition-colors duration-300 rounded-lg text-sm font-medium;
+  }
+
+  .gradient-button {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 
+           hover:from-blue-600 hover:to-purple-600 
+           text-white px-6 py-2 rounded-lg font-medium 
+           transition-all duration-300 transform hover:scale-105
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+  }
+
+  .glass-effect {
+    @apply bg-opacity-20 backdrop-blur-lg bg-gray-900 border border-gray-700;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 1s linear infinite;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Add padding to main content containers to account for fixed navbar */
+.home-container,
+.upload-container,
+.video-player-container,
+.my-videos-container {
+  padding-top: calc(var(--navbar-height) + 2rem);
+  min-height: 100vh;
+}
