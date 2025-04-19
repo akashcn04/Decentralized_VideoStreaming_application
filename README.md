@@ -99,9 +99,9 @@ This project represents a significant step towards decentralized content distrib
 
 
 steps to run:
-1) clone the repositary
-2)in client directory run npm install [make sure npm is installed]
-3)download ganache from google and create workspace in that and start it [network configurations : port 8545 and 1337 network chain]
-4)compile the contract in main directory and you will get a contract address..[copy and paste it in .env files present in root and client directory]
-5)among given test accounts , take one or if already use it [meta mask account, ganache gives 10 free accounts to test]
-6)now go in client and type npm run dev and enjoy
+1) clone the repositary <br>
+2)in client directory run npm install [make sure npm is installed] <br>
+3)download ganache from google and create workspace in that and start it [network configurations : port 8545 and 1337 network chain] <br>
+4)compile the contract in main directory and you will get a contract address..[copy and paste it in .env files present in root and client directory] <br>
+5)among given test accounts , take one or if already use it [meta mask account, ganache gives 10 free accounts to test] <br>
+6)now go in client and type npm run dev and enjoy <br>
